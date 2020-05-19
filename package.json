@@ -1,0 +1,48 @@
+{
+  "name": "covid_19_tracker",
+  "version": "1.0.0b",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "android:debug": "./android/gradlew -p ./android clean assembleDebug",
+    "android:release": "./android/gradlew -p ./android clean assembleRelease",
+    "android:reset": "./android/gradlew -p ./android clean cleanBuildCache",
+    "i18n:download": "",
+    "ios": "react-native run-ios",
+    "lint": "eslint ./src/**/*.{js,jsx} --fix",
+    "start": "react-native start",
+    "start:reset": "react-native start --reset-cache",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.10.3",
+    "axios": "^0.19.2",
+    "date-fns": "^2.14.0",
+    "react": "16.13.1",
+    "react-native": "0.62.2",
+    "react-native-modal": "^11.5.6",
+    "react-native-svg": "^12.1.0",
+    "react-native-svg-charts": "^5.4.0",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "word-wrap": "^1.2.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-export-namespace-from": "^7.8.3",
+    "@babel/runtime": "^7.9.6",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.0.1",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.20.0",
+    "jest": "^26.0.1",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "prettier": "^2.0.5",
+    "react-native-svg-transformer": "^0.14.3",
+    "react-test-renderer": "16.13.1"
+  }
+}
