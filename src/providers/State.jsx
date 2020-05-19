@@ -6,10 +6,11 @@ import { Provider } from 'react-redux';
 import { reducers } from '../state';
 
 const State = ({ children }) => {
-  const { countries, stats } = reducers;
+  const { countries, history, stats } = reducers;
   const store = createStore(
     combineReducers({
       countries,
+      history,
       stats,
     }),
     {},
