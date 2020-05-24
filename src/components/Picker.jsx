@@ -1,5 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import SearchIcon from '../assets/images/ic-search.svg';
@@ -12,26 +16,26 @@ EStyleSheet.build({
 
 const styles = EStyleSheet.create({
   filter: {
-    marginBottom: 15,
+    marginBottom: hp(2),
   },
   filterIcon: {
     top: 0,
     bottom: 0,
   },
   filterInput: {
-    paddingLeft: 40,
+    paddingLeft: wp(10),
   },
   item: {
-    marginTop: 5,
-    marginBottom: 5,
-    width: 200,
+    marginTop: hp(0.2),
+    marginBottom: hp(0.2),
+    width: wp(50),
     alignSelf: 'flex-start',
   },
   itemLabel: {
-    paddingTop: 7,
-    paddingBottom: 7,
+    paddingTop: hp(0.9),
+    paddingBottom: hp(0.9),
     color: '$galleryColor',
-    fontSize: 18,
+    fontSize: wp(4),
   },
   list: {
     alignSelf: 'center',
@@ -61,7 +65,7 @@ const Picker = ({
     <ScrollView style={styles.picker}>
       {isFilterVisible && (
         <TextInput
-          icon={<SearchIcon />}
+          icon={<SearchIcon width={28} />}
           placeholder={placeholder}
           style={styles.filter}
           styleIcon={styles.filterIcon}

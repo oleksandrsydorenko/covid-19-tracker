@@ -1,13 +1,14 @@
 import React from 'react';
 import { View } from 'react-native';
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { CountryPicker, PieChart, PieChartStats, Stripe } from '../components';
 
 const styles = EStyleSheet.create({
   stats: {
-    marginTop: 'auto',
-    marginBottom: 'auto',
+    marginTop: hp(8),
+    marginBottom: hp(8),
   },
 });
 

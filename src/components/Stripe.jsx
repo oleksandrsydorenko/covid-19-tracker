@@ -1,5 +1,9 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { theme } from '../utils/constants';
@@ -12,12 +16,11 @@ EStyleSheet.build({
 const styles = EStyleSheet.create({
   label: {
     color: '$galleryColor',
-    fontSize: 16,
+    fontSize: wp(3.5),
   },
   stripe: {
-    marginBottom: 35,
-    paddingTop: 5,
-    paddingBottom: 5,
+    paddingTop: hp(0.7),
+    paddingBottom: hp(0.7),
     backgroundColor: '$mineShaftColor',
     flexDirection: 'row',
     justifyContent: 'center',

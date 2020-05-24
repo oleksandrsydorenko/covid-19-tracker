@@ -1,5 +1,9 @@
 import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import RNModal from 'react-native-modal';
 
@@ -12,22 +16,22 @@ EStyleSheet.build({
 
 const styles = EStyleSheet.create({
   modal: {
-    paddingTop: 46,
+    paddingTop: hp(3.5),
     backgroundColor: '$codGrayColor',
   },
   closeButton: {
     position: 'absolute',
-    top: 10,
-    right: 10,
-    width: 30,
-    height: 30,
+    top: wp(1),
+    right: wp(1),
+    width: wp(6),
+    height: wp(6),
     alignItems: 'center',
     justifyContent: 'center',
   },
   content: {
-    paddingRight: 35,
-    paddingBottom: 35,
-    paddingLeft: 35,
+    paddingRight: wp(8.5),
+    paddingBottom: hp(3.5),
+    paddingLeft: wp(8.5),
     backgroundColor: '$codGrayColor',
   },
 });
@@ -40,7 +44,7 @@ const Modal = ({ children, isVisible, onClose }) => (
         onPress={onClose}
         touchSoundDisabled
       >
-        <CloseIcon />
+        <CloseIcon width={wp(4)} />
       </TouchableOpacity>
       <View style={styles.content}>{children}</View>
     </View>

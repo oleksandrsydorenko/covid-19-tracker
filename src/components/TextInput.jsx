@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextInput as RNTextInput, View } from 'react-native';
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { theme } from '../utils/constants';
@@ -15,12 +16,10 @@ const styles = EStyleSheet.create({
     justifyContent: 'center',
   },
   input: {
-    paddingRight: 10,
-    paddingLeft: 10,
     borderBottomWidth: 1,
     borderColor: '$mineShaftColor',
     color: '$galleryColor',
-    fontSize: 18,
+    fontSize: wp(4),
   },
 });
 

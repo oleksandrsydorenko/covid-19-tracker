@@ -1,13 +1,14 @@
 import React from 'react';
 import { View } from 'react-native';
 import { PieChart as RNPieChart } from 'react-native-svg-charts';
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 const styles = EStyleSheet.create({
   chart: {
-    marginTop: 30,
-    marginBottom: 30,
-    height: 240,
+    marginTop: hp(2),
+    marginBottom: hp(2),
+    height: hp(35),
   },
   content: {
     position: 'absolute',
@@ -15,8 +16,6 @@ const styles = EStyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    zIndex: 100,
-    elevation: 100,
   },
 });
 
@@ -30,8 +29,8 @@ const PieChart = ({ children, data }) => (
         key: i,
         svg: { fill },
       }))}
-      innerRadius="100%"
-      outerRadius="78%"
+      innerRadius="80%"
+      outerRadius="64%"
       style={styles.chart}
     />
   </View>

@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { Text, TouchableOpacity } from 'react-native';
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import EStyleSheet from 'react-native-extended-stylesheet';
 import wrap from 'word-wrap';
 
@@ -26,18 +27,17 @@ const styles = EStyleSheet.create({
   },
   buttonLabel: {
     color: '$galleryColor',
-    fontSize: 24,
-    lineHeight: 38,
+    fontSize: wp(5),
+    lineHeight: wp(9),
     textAlign: 'center',
   },
 });
 
 const CountryPicker = ({ country, countries, fetchStats }) => {
   const [isVisible, setVisibility] = useState(false);
-  const wrappedValue =
-    country === system.DEFAULT_COUNTRY
-      ? 'Select\nCountry'
-      : wrapCountry(country);
+  const wrappedValue = wrapCountry(
+    country === system.DEFAULT_COUNTRY ? 'Select Country' : country,
+  );
 
   const toggleModal = useCallback(() => {
     setVisibility(!isVisible);

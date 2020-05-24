@@ -1,5 +1,9 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { formatNumber } from '../utils/helpers';
@@ -11,11 +15,11 @@ const styles = EStyleSheet.create({
     justifyContent: 'center',
   },
   cellLabel: {
-    fontSize: 20,
+    fontSize: wp(4),
   },
   cellValue: {
-    marginBottom: 6,
-    fontSize: 24,
+    marginBottom: hp(0.8),
+    fontSize: wp(5),
   },
   stats: {
     display: 'flex',

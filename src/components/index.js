@@ -6,7 +6,6 @@ export Modal from './Modal';
 export Picker from './Picker';
 export PieChart from './PieChart';
 export PieChartStats from './PieChartStats';
-export Report from './Report';
 export Spinner from './Spinner';
 export Stripe from './Stripe';
 export TextInput from './TextInput';
