@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -62,7 +62,7 @@ const Picker = ({
   }, []);
 
   return (
-    <ScrollView style={styles.picker}>
+    <View style={styles.picker}>
       {isFilterVisible && (
         <TextInput
           icon={<SearchIcon width={28} />}
@@ -74,8 +74,10 @@ const Picker = ({
           onChange={onChange}
         />
       )}
-      <View style={styles.list}>
-        {filteredItems.map((item, index) => (
+      <FlatList
+        data={filteredItems}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item, index }) => (
           <TouchableOpacity
             key={index}
             style={styles.item}
@@ -84,9 +86,10 @@ const Picker = ({
           >
             <Text style={styles.itemLabel}>{formatItem(item)}</Text>
           </TouchableOpacity>
-        ))}
-      </View>
-    </ScrollView>
+        )}
+        style={styles.list}
+      />
+    </View>
   );
 };
 
