@@ -1,9 +1,15 @@
 import React from 'react';
-import { TextInput as RNTextInput, StyleSheet, View } from 'react-native';
+import { TextInput as RNTextInput, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { theme } from '../utils/constants';
 
-const styles = StyleSheet.create({
+EStyleSheet.build({
+  $galleryColor: theme.color.gallery,
+  $mineShaftColor: theme.color.mineShaft,
+});
+
+const styles = EStyleSheet.create({
   icon: {
     position: 'absolute',
     justifyContent: 'center',
@@ -12,8 +18,8 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     paddingLeft: 10,
     borderBottomWidth: 1,
-    borderColor: theme.color.mineShaft,
-    color: theme.color.gallery,
+    borderColor: '$mineShaftColor',
+    color: '$galleryColor',
     fontSize: 18,
   },
 });

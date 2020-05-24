@@ -1,17 +1,16 @@
 import React, { useCallback, useState } from 'react';
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import SearchIcon from '../assets/images/ic-search.svg';
 import { theme } from '../utils/constants';
 import { TextInput } from './';
 
-const styles = StyleSheet.create({
+EStyleSheet.build({
+  $galleryColor: theme.color.gallery,
+});
+
+const styles = EStyleSheet.create({
   filter: {
     marginBottom: 15,
   },
@@ -31,7 +30,7 @@ const styles = StyleSheet.create({
   itemLabel: {
     paddingTop: 7,
     paddingBottom: 7,
-    color: theme.color.gallery,
+    color: '$galleryColor',
     fontSize: 18,
   },
   list: {

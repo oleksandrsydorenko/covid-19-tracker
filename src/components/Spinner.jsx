@@ -1,14 +1,19 @@
 import React from 'react';
-import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { theme } from '../utils/constants';
 
-const styles = StyleSheet.create({
+EStyleSheet.build({
+  $codGrayColor: theme.color.codGray,
+});
+
+const styles = EStyleSheet.create({
   spinner: {
     position: 'absolute',
     width: '100%',
     height: '100%',
-    backgroundColor: theme.color.codGray,
+    backgroundColor: '$codGrayColor',
     justifyContent: 'center',
   },
 });

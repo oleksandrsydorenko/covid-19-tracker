@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import wrap from 'word-wrap';
 
 import { Modal, Picker } from './';
@@ -14,13 +15,17 @@ const wrapCountry = country =>
     width: 12,
   });
 
-const styles = StyleSheet.create({
+EStyleSheet.build({
+  $galleryColor: theme.color.gallery,
+});
+
+const styles = EStyleSheet.create({
   button: {
     marginTop: 'auto',
     marginBottom: 'auto',
   },
   buttonLabel: {
-    color: theme.color.gallery,
+    color: '$galleryColor',
     fontSize: 24,
     lineHeight: 38,
     textAlign: 'center',

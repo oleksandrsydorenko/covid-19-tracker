@@ -1,18 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { theme } from '../utils/constants';
 
-const styles = StyleSheet.create({
+EStyleSheet.build({
+  $galleryColor: theme.color.gallery,
+  $mineShaftColor: theme.color.mineShaft,
+});
+
+const styles = EStyleSheet.create({
   label: {
-    color: theme.color.gallery,
+    color: '$galleryColor',
     fontSize: 16,
   },
   stripe: {
     marginBottom: 35,
     paddingTop: 5,
     paddingBottom: 5,
-    backgroundColor: theme.color.mineShaft,
+    backgroundColor: '$mineShaftColor',
     flexDirection: 'row',
     justifyContent: 'center',
   },

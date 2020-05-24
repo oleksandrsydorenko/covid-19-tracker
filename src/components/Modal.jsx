@@ -1,14 +1,19 @@
 import React from 'react';
+import { TouchableOpacity, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 import RNModal from 'react-native-modal';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 import CloseIcon from '../assets/images/ic-close.svg';
 import { theme } from '../utils/constants';
 
-const styles = StyleSheet.create({
+EStyleSheet.build({
+  $codGrayColor: theme.color.codGray,
+});
+
+const styles = EStyleSheet.create({
   modal: {
     paddingTop: 46,
-    backgroundColor: theme.color.codGray,
+    backgroundColor: '$codGrayColor',
   },
   closeButton: {
     position: 'absolute',
@@ -23,7 +28,7 @@ const styles = StyleSheet.create({
     paddingRight: 35,
     paddingBottom: 35,
     paddingLeft: 35,
-    backgroundColor: theme.color.codGray,
+    backgroundColor: '$codGrayColor',
   },
 });
 

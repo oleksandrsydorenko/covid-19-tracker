@@ -1,11 +1,12 @@
 import React from 'react';
+import { Text, View } from 'react-native';
 import { format, parseISO } from 'date-fns';
-import { StyleSheet, Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { Stripe } from '../components';
 import { system } from '../utils/constants';
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   cell: {
     marginRight: 20,
     marginBottom: 30,

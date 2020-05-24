@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { formatNumber } from '../utils/helpers';
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   cell: {
     display: 'flex',
     alignItems: 'center',

@@ -1,13 +1,18 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { theme } from '../utils/constants';
 
-const styles = StyleSheet.create({
+EStyleSheet.build({
+  $codGrayColor: theme.color.codGray,
+});
+
+const styles = EStyleSheet.create({
   layout: {
     width: '100%',
     height: '100%',
-    backgroundColor: theme.color.codGray,
+    backgroundColor: '$codGrayColor',
   },
 });
 

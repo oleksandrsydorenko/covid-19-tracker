@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
 
 import { CountryPicker, PieChart, PieChartStats, Stripe } from '../components';
 
-const styles = StyleSheet.create({
+const styles = EStyleSheet.create({
   stats: {
     marginTop: 'auto',
     marginBottom: 'auto',
