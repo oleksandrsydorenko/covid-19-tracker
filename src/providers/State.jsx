@@ -1,22 +1,19 @@
 import React from 'react';
-import thunk from 'redux-thunk';
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
+import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 
-import { reducers } from '../state';
+import { Spinner } from '../components';
+import { persistor, store } from '../state/store';
 
-const State = ({ children }) => {
-  const { countries, stats } = reducers;
-  const store = createStore(
-    combineReducers({
-      countries,
-      stats,
-    }),
-    {},
-    compose(applyMiddleware(thunk)),
-  );
-
-  return <Provider store={store}>{children}</Provider>;
-};
+const State = ({ children }) => (
+  <Provider store={store}>
+    <PersistGate
+      persistor={persistor}
+      loading={<Spinner isFullScreen={true} />}
+    >
+      {children}
+    </PersistGate>
+  </Provider>
+);
 
 export default State;
