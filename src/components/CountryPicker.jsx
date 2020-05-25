@@ -28,7 +28,7 @@ const styles = EStyleSheet.create({
   buttonLabel: {
     color: '$galleryColor',
     fontSize: wp(5),
-    lineHeight: wp(9),
+    lineHeight: wp(8.5),
     textAlign: 'center',
   },
 });

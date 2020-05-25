@@ -16,7 +16,7 @@ EStyleSheet.build({
 
 const styles = EStyleSheet.create({
   filter: {
-    marginBottom: hp(2),
+    marginBottom: hp(3.5),
   },
   filterIcon: {
     top: 0,
@@ -28,8 +28,7 @@ const styles = EStyleSheet.create({
   item: {
     marginTop: hp(0.2),
     marginBottom: hp(0.2),
-    width: wp(50),
-    alignSelf: 'flex-start',
+    alignSelf: 'center',
   },
   itemLabel: {
     paddingTop: hp(0.9),
@@ -39,6 +38,7 @@ const styles = EStyleSheet.create({
   },
   list: {
     alignSelf: 'center',
+    width: '100%',
   },
   picker: {
     width: '100%',

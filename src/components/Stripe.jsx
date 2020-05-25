@@ -17,10 +17,11 @@ const styles = EStyleSheet.create({
   label: {
     color: '$galleryColor',
     fontSize: wp(3.5),
+    fontWeight: 'bold',
   },
   stripe: {
-    paddingTop: hp(0.7),
-    paddingBottom: hp(0.7),
+    paddingTop: hp(1),
+    paddingBottom: hp(1),
     backgroundColor: '$mineShaftColor',
     flexDirection: 'row',
     justifyContent: 'center',

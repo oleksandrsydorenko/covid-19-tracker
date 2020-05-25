@@ -7,8 +7,8 @@ import { CountryPicker, PieChart, PieChartStats, Stripe } from '../components';
 
 const styles = EStyleSheet.create({
   stats: {
-    marginTop: hp(8),
-    marginBottom: hp(8),
+    marginTop: hp(6),
+    marginBottom: hp(6),
   },
 });
 
