@@ -1,6 +1,6 @@
 {
   "name": "covid_19_tracker",
-  "version": "1.0.0b",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
