@@ -35,20 +35,34 @@ const styles = EStyleSheet.create({
 
 const CountryPicker = ({ country, countries, fetchStats }) => {
   const [isVisible, setVisibility] = useState(false);
-  const wrappedValue = wrapCountry(
+  const [pickedCountry, setPickedCountry] = useState(null);
+  const buttonLabel = wrapCountry(
     country === system.DEFAULT_COUNTRY ? 'Select Country' : country,
   );
 
-  const toggleModal = useCallback(() => {
-    setVisibility(!isVisible);
-  }, [isVisible]);
-  const handlePick = useCallback(value => async () => fetchStats(value), [
-    fetchStats,
-  ]);
+  const handleHide = useCallback(async () => {
+    if (pickedCountry === country) {
+      return;
+    }
+
+    await fetchStats(pickedCountry);
+  }, [country, pickedCountry, fetchStats]);
+  const handlePick = useCallback(
+    value => async () => {
+      setVisibility(false);
+      setPickedCountry(value);
+    },
+    [],
+  );
+  const toggleModal = useCallback(() => setVisibility(!isVisible), [isVisible]);
 
   return (
     <>
-      <Modal isVisible={isVisible} onClose={toggleModal}>
+      <Modal
+        isVisible={isVisible}
+        onModalClose={toggleModal}
+        onModalHide={handleHide}
+      >
         <Picker
           formatItem={formatCountry}
           items={['All', ...countries]}
@@ -61,7 +75,7 @@ const CountryPicker = ({ country, countries, fetchStats }) => {
         onPress={toggleModal}
         touchSoundDisabled
       >
-        <Text style={styles.buttonLabel}>{wrappedValue}</Text>
+        <Text style={styles.buttonLabel}>{buttonLabel}</Text>
       </TouchableOpacity>
     </>
   );

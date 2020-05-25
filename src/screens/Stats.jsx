@@ -22,7 +22,7 @@ const Stats = ({ countries, stats, fetchCountries, fetchStats }) => {
     fetchStats();
   }, [fetchCountries, fetchStats]);
 
-  if (stats.isFetching) {
+  if (!stats.data) {
     return <Spinner isFullScreen={true} />;
   }
 

@@ -36,12 +36,18 @@ const styles = EStyleSheet.create({
   },
 });
 
-const Modal = ({ children, isVisible, onClose }) => (
-  <RNModal isVisible={isVisible}>
+const Modal = ({ children, isVisible, onModalClose, onModalHide }) => (
+  <RNModal
+    hideModalContentWhileAnimating
+    useNativeDriver
+    isVisible={isVisible}
+    onBackButtonPress={onModalHide}
+    onModalHide={onModalHide}
+  >
     <View style={styles.modal}>
       <TouchableOpacity
         style={styles.closeButton}
-        onPress={onClose}
+        onPress={onModalClose}
         touchSoundDisabled
       >
         <CloseIcon width={wp(4)} />
