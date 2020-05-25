@@ -55,7 +55,7 @@ const Picker = ({
 }) => {
   const [filter, setFilter] = useState('');
   const filteredItems = items.filter(item =>
-    item.toLowerCase().includes(filter),
+    item.toLowerCase().includes(filter.toLowerCase()),
   );
   const onChange = useCallback(({ nativeEvent: { text } }) => {
     setFilter(text);
