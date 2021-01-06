@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.10.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "date-fns": "^2.14.0",
     "react": "16.13.1",
     "react-native": "0.62.2",
